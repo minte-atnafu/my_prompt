@@ -35,7 +35,7 @@ const Nav = () => {
               <p className='logo_text'>Promptopia</p>
           </Link>
           {/* Desktop navigation */}
-          <div className='sm:flex-row hidden'>
+          <div className='sm:flex hidden'>
               {isUserLoggedIn ? (
                   <div className='flex gap-3 md:gap-5'>
                       <Link href="/create-post" className='black_btn'>
@@ -50,7 +50,7 @@ const Nav = () => {
                               src='/assets/images/logo.svg'
                               width={37}
                               height={37}
-                              className='rounded-full'
+                            //   className='rounded-full'
                           alt="profile"/>
                       </Link>
                   </div>  
@@ -90,6 +90,22 @@ const Nav = () => {
                                   onClick={() => setToggleDropdown(false)}>
                                   My Profile
                               </Link>
+                              <Link
+                                  href="/create-prompt"
+                                  className='dropdown_link'
+                                  onClick={() => setToggleDropdown(false)}>
+                                  Create Prompt
+                              </Link>
+                              <button
+                                  type='button'
+                                  onClick={() => {
+                                      setToggleDropdown(false);
+                                      signOut();
+                                  }}
+                                  className='MT-5 w-full black_btn'>
+                                  Sign Out
+                              </button>
+
                           </div>
                           )}
                   </div>

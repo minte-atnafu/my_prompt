@@ -1,7 +1,7 @@
-import '@styles/globals.css'
+import '../styles/globals.css'
 
-import Nav from '@componets/Nav'
-import Provider from '@componets/Provider'
+import Nav from '../componets/Nav'
+import Provider from '../componets/Provider'
 export const metadata = {
     title: "my_prompt",
     dicription:"Discover and share AI propmpt"
