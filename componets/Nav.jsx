@@ -14,14 +14,12 @@ const Nav = () => {
     const [toggleDropdown, setToggleDropdown] = useState(false);
 
     useEffect(() => {
-        const setProviders = async () => {
-            const response = await getProviders();
-
-            setProviders(response);
-        }
-
-        setProviders();
-    }, [])
+        (async () => {
+          const res = await getProviders();
+          setProviders(res);
+        })();
+      }, []);
+    
   return (
       <nav className='flex-between w-full mb-6 pt-3'>
           <Link href="/" className='flex gap-2 flex-center'>
@@ -37,7 +35,7 @@ const Nav = () => {
           {/* Desktop navigation */}
           <div className='sm:flex hidden'>
               {isUserLoggedIn ? (
-                  <div className='flex gap-3 md:gap-5'>
+                  <div className='flex  gap-3 md:gap-5'>
                       <Link href="/create-post" className='black_btn'>
                           Create Post
                       </Link>
@@ -50,7 +48,7 @@ const Nav = () => {
                               src='/assets/images/logo.svg'
                               width={37}
                               height={37}
-                            //   className='rounded-full'
+                              className='rounded-full' 
                           alt="profile"/>
                       </Link>
                   </div>  
